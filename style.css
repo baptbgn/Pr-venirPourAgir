@@ -374,6 +374,16 @@ footer {
   color: #8a7a74;
   line-height: 1.7;
 }
+.footer-contact {
+  background: var(--accent);
+  color: #fff;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 12px;
+  letter-spacing: .22em;
+  padding: 10px 28px;
+  text-decoration: none;
+  transition: background .2s, transform .15s;
+}
 
 /* ── RESPONSIVE ──────────────────────────────── */
 @media (max-width: 1024px) {

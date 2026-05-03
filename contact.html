@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prévenir Pour Agir – Classe de TMS</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Bebas+Neue&family=EB+Garamond:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ── NAVBAR ── -->
+  <nav>
+    <a class="nav-logo" href="#">Prévenir Pour Agir</a>
+    <ul class="nav-links">
+      <li><a href="#bienvenue">Présentation</a></li>
+      <li><a href="#equipe">L'équipe</a></li>
+      <li><a href="#forces">Les forces</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="content">
+    <h2>Contactez-nous</h2>
+    <form id="contact-form">
+  <input type="text" name="name" placeholder="Votre nom" required>
+  <input type="email" name="email" placeholder="Votre email" required>
+  <textarea name="message" placeholder="Votre message" required></textarea>
+
+  <!-- honeypot invisible -->
+  <input type="text" name="phone" style="display:none">
+
+  <button type="submit" id="submit-btn">Envoyer</button>
+  <span id="spinner" style="display:none; margin-left:10px;">⏳ Envoi...</span>
+</form>
+
+<div id="form-response" style="margin-top:10px; font-weight:bold;"></div>
+
+<script>
+const form = document.getElementById("contact-form");
+const responseDiv = document.getElementById("form-response");
+const submitBtn = document.getElementById("submit-btn");
+const spinner = document.getElementById("spinner");
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  submitBtn.disabled = true;
+  spinner.style.display = "inline";
+  responseDiv.style.color = "black";
+  responseDiv.textContent = "";
+
+  const formData = new FormData(form);
+
+  try {
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      body: formData
+    });
+
+    const text = await res.text();
+
+    if (res.ok) {
+      responseDiv.style.color = "green";
+      responseDiv.textContent = text;
+      form.reset();
+    } else {
+      responseDiv.style.color = "red";
+      responseDiv.textContent = text;
+    }
+  } catch (err) {
+    responseDiv.style.color = "red";
+    responseDiv.textContent = "Erreur de connexion, réessayez plus tard.";
+  } finally {
+    submitBtn.disabled = false;
+    spinner.style.display = "none";
+  }
+});
+</script>
+
+    <p>Vous pouvez aussi nous contacter par email à <a href="mailto:prevenirpouragir@gmail.com">prevenirpouragir@gmail.com</a></p>
+  </section>
+
+    <!-- ── FOOTER ── -->
+  <footer id="contact">
+    <div>
+      <div class="footer-logo">Prévenir Pour Agir</div>
+      <div class="footer-sub">Classe de Terminale Métiers de la Sécurité</div>
+    </div>
+    <div class="footer-right">
+      Projet scolaire – TMS<br>
+      Gaëtan · Enzo · Maël · Albain · Baptiste · Nathan
+    </div>
+  </footer>
+
+</body>
+</html>
