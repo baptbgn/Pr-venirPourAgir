@@ -1,47 +1,143 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prévenir Pour Agir</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prévenir Pour Agir – Classe de TMS</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Bebas+Neue&family=EB+Garamond:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <header>
-      <div class="brand-nav">
-        <div>
-          <h1>Prévenir Pour Agir</h1>
-          <p>Un site simple pour informer et agir efficacement.</p>
-        </div>
-        <nav class="nav-bar">
-          <a href="#home">Accueil</a>
-          <a href="#actions">Actions</a>
-          <a href="#contact">Contact</a>
-        </nav>
+
+  <!-- ── NAVBAR ── -->
+  <nav>
+    <a class="nav-logo" href="#">Prévenir Pour Agir</a>
+    <ul class="nav-links">
+      <li><a href="#bienvenue">Présentation</a></li>
+      <li><a href="#equipe">L'équipe</a></li>
+      <li><a href="#forces">Les forces</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <section class="hero">
+    <p class="hero-tag">Classe de Terminale Métiers de la Sécurité</p>
+    <h1>Prévenir<br>Pour Agir</h1>
+    <p class="hero-sub">
+      Sensibiliser le plus grand nombre aux risques liés à la sécurité, grâce à des interviews de professionnels et des vidéos explicatives.
+    </p>
+    <a href="#bienvenue" class="hero-cta">Découvrir le projet</a>
+  </section>
+
+  <!-- ── PHOTO STRIP ── -->
+  <div class="photo-strip">
+    <div class="strip-cell strip-cell-fire">
+      <div class="strip-cell-inner">
+        <span class="strip-icon">⛑️</span>
+        <span class="strip-label">Sapeurs-Pompiers</span>
       </div>
-    </header>
-
-    <main id="home">
-      <section class="card">
-        <h2>Objectif</h2>
-        <p>Prévenir les risques et encourager les actions concrètes pour une meilleure sécurité.</p>
-        <a href="#actions" class="button">Découvrir les actions</a>
-      </section>
-
-      <section id="actions" class="card">
-        <h2>Actions clés</h2>
-        <ul>
-          <li>Informer la communauté</li>
-          <li>Éduquer sur les bons gestes</li>
-          <li>Mettre en place des plans d’action</li>
-        </ul>
-      </section>
-    </main>
-
-    <footer class="card">
-      <p>© 2026 Prévenir Pour Agir</p>
-    </footer>
+      <span class="copyright">©hard-dec</span>
+    </div>
+    <div class="strip-cell strip-cell-gend">
+      <div class="strip-cell-inner">
+        <span class="strip-icon">🪖</span>
+        <span class="strip-label">Gendarmerie</span>
+      </div>
+    </div>
+    <div class="strip-cell strip-cell-army">
+      <div class="strip-cell-inner">
+        <span class="strip-icon">🎖️</span>
+        <span class="strip-label">Armée</span>
+      </div>
+    </div>
   </div>
+
+  <!-- ── BIENVENUE / ABOUT ── -->
+  <section id="bienvenue">
+    <div class="section-inner">
+      <p class="section-label">Notre projet</p>
+      <h2 class="section-title">Bienvenue</h2>
+      <div class="about-grid">
+        <p>
+          Bonjour à toutes et à tous,<br><br>
+          Nous sommes six élèves de terminale Métiers de la Sécurité (Gaëtan, Enzo, Albain, Baptiste, Maël et Nathan). Dans le cadre de nos études, nous nous sommes donné le défi de faire connaître et de sensibiliser le plus grand nombre de personnes aux risques liés à la sécurité.
+        </p>
+        <p>
+          Ainsi, nous avons décidé d'ouvrir une page internet dédiée à notre projet.<br><br>
+          Afin de vous rendre une expérience plus intéressante et plus immersive, le site internet sera complété par des interviews de professionnels qui ont de l'expérience dans le domaine de la sécurité, ainsi que des vidéos explicatives et préventives.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ÉQUIPE ── -->
+  <section id="equipe">
+    <div class="section-inner">
+      <p class="section-label">Les membres</p>
+      <h2 class="section-title">L'équipe</h2>
+      <div class="team-grid">
+        <div class="team-card">
+          <div class="team-avatar">👤</div>
+          <p class="team-name">Gaëtan<br>Dufrenne</p>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar">👤</div>
+          <p class="team-name">Enzo<br>Chemin</p>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar">👤</div>
+          <p class="team-name">Maël<br>Lavorel</p>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar">👤</div>
+          <p class="team-name">Albain<br>Savary</p>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar">👤</div>
+          <p class="team-name">Baptiste<br>Bergeon</p>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar">👤</div>
+          <p class="team-name">Nathan<br>Chatron-Michaud</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FORCES ── -->
+  <section id="forces">
+    <div class="section-inner">
+      <p class="section-label">Nos partenaires</p>
+      <h2 class="section-title">Les forces de sécurité</h2>
+      <div class="bottom-photos">
+        <div class="bp-cell bp-gend">
+          <span class="badge-side">Gendarmerie</span>
+        </div>
+        <div class="bp-cell bp-fire">
+          <div class="bp-fire-inner">
+            <span class="bp-fire-icon">🧯</span>
+            <span class="bp-fire-num">Sapeurs-Pompiers</span>
+          </div>
+        </div>
+        <div class="bp-cell bp-police">
+          <div class="badge-white">Police</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer id="contact">
+    <div>
+      <div class="footer-logo">Prévenir Pour Agir</div>
+      <div class="footer-sub">Classe de Terminale Métiers de la Sécurité</div>
+    </div>
+    <div class="footer-right">
+      Projet scolaire – TMS<br>
+      Gaëtan · Enzo · Maël · Albain · Baptiste · Nathan
+    </div>
+  </footer>
+
 </body>
 </html>
