@@ -105,7 +105,7 @@ nav {
 
 .hero-sub {
   font-size: 19px;
-  color: #a89890;
+  color: #000000;
   max-width: 560px;
   line-height: 1.65;
   margin-bottom: 44px;
@@ -244,6 +244,7 @@ nav {
   padding: 28px 14px;
   text-align: center;
   transition: box-shadow .25s, transform .25s;
+  position: relative;
 }
 
 .team-card:hover {
@@ -278,6 +279,40 @@ nav {
   text-transform: uppercase;
   color: var(--dark);
   line-height: 1.45;
+}
+
+.team-intro {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-family: 'EB Garamond', serif;
+  font-size: 12px;
+  color: var(--text);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  max-width: 1000px;
+  text-align: left;
+  display: none;
+  z-index: 10;
+  margin-bottom: 8px;
+}
+
+.team-intro::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: var(--white);
+}
+
+.team-card:hover .team-intro {
+  display: block;
 }
 
 /* ── BOTTOM PHOTOS ───────────────────────────── */
@@ -393,7 +428,7 @@ footer {
 /* ── RESPONSIVE ──────────────────────────────── */
 @media (max-width: 1024px) {
   nav, #bienvenue, #equipe, #forces, footer { padding-left: 36px; padding-right: 36px; }
-  .team-grid { grid-template-columns: repeat(3, 1fr); }
+  .team-grid { grid-template-columns: repeat(4, 1fr); }
 }
 
 @media (max-width: 720px) {

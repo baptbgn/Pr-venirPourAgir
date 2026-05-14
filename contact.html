@@ -11,12 +11,12 @@
 
   <!-- ── NAVBAR ── -->
   <nav>
-    <a class="nav-logo" href="#">Prévenir Pour Agir</a>
+    <a class="nav-logo" href="index.html">Prévenir Pour Agir</a>
     <ul class="nav-links">
-      <li><a href="#bienvenue">Présentation</a></li>
-      <li><a href="#equipe">L'équipe</a></li>
-      <li><a href="#forces">Les forces</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="index.html">Présentation</a></li>
+      <li><a href="index.html#equipe">L'équipe</a></li>
+      <li><a href="index.html#forces">Les forces</a></li>
+      <li><a href="contact.html#contact">Contact</a></li>
     </ul>
   </nav>
 
@@ -37,45 +37,7 @@
 <div id="form-response" style="margin-top:10px; font-weight:bold;"></div>
 
 <script>
-const form = document.getElementById("contact-form");
-const responseDiv = document.getElementById("form-response");
-const submitBtn = document.getElementById("submit-btn");
-const spinner = document.getElementById("spinner");
 
-form.addEventListener("submit", async (e) => {
-  e.preventDefault();
-
-  submitBtn.disabled = true;
-  spinner.style.display = "inline";
-  responseDiv.style.color = "black";
-  responseDiv.textContent = "";
-
-  const formData = new FormData(form);
-
-  try {
-    const res = await fetch("/api/contact", {
-      method: "POST",
-      body: formData
-    });
-
-    const text = await res.text();
-
-    if (res.ok) {
-      responseDiv.style.color = "green";
-      responseDiv.textContent = text;
-      form.reset();
-    } else {
-      responseDiv.style.color = "red";
-      responseDiv.textContent = text;
-    }
-  } catch (err) {
-    responseDiv.style.color = "red";
-    responseDiv.textContent = "Erreur de connexion, réessayez plus tard.";
-  } finally {
-    submitBtn.disabled = false;
-    spinner.style.display = "none";
-  }
-});
 </script>
 
     <p>Vous pouvez aussi nous contacter par email à <a href="mailto:prevenirpouragir@gmail.com">prevenirpouragir@gmail.com</a></p>
