@@ -383,6 +383,187 @@ nav {
   color: rgba(255,255,255,.35);
 }
 
+/* ── RISQUES SECTION ─────────────────────────── */
+#risques {
+  padding: 90px 80px;
+  background: var(--light);
+}
+
+.risks-content {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+}
+
+.risk-item {
+  background: var(--white);
+  border: 1px solid rgba(107, 76, 59, 0.12);
+  border-radius: 24px;
+  padding: 32px;
+  box-shadow: 0 18px 50px rgba(46, 31, 26, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.risk-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 24px 64px rgba(46, 31, 26, 0.14);
+}
+
+.risk-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(139, 0, 0, 0.12);
+  color: var(--accent);
+  font-size: 32px;
+  margin-bottom: 24px;
+}
+
+.risk-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(26px, 3vw, 34px);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  color: var(--dark);
+  margin-bottom: 18px;
+}
+
+.risk-description {
+  font-family: 'EB Garamond', serif;
+  font-size: 16px;
+  color: var(--text);
+  margin-bottom: 16px;
+}
+
+.risk-text {
+  font-family: 'EB Garamond', serif;
+  font-size: 17px;
+  line-height: 1.8;
+  color: #3f372f;
+  margin-bottom: 18px;
+}
+
+.risk-text a {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.risk-text ul {
+  margin: 16px 0 0 20px;
+  padding-left: 0;
+  list-style: disc;
+}
+
+.risk-text ul li {
+  margin-bottom: 10px;
+}
+
+.risk-text li {
+  font-size: 17px;
+  line-height: 1.75;
+}
+
+.risk-item p:last-child {
+  margin-bottom: 0;
+}
+
+/* ── CONTACT PAGE ───────────────────────────── */
+.content {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 90px 80px;
+}
+
+.content h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 4vw, 46px);
+  margin-bottom: 24px;
+  color: var(--dark);
+}
+
+#contact-form {
+  display: grid;
+  gap: 18px;
+  background: var(--white);
+  border: 1px solid rgba(107, 76, 59, 0.15);
+  border-radius: 24px;
+  padding: 32px;
+  box-shadow: 0 18px 50px rgba(46, 31, 26, 0.08);
+}
+
+#contact-form input,
+#contact-form textarea {
+  width: 100%;
+  border: 1px solid rgba(107, 76, 59, 0.2);
+  border-radius: 12px;
+  padding: 16px 18px;
+  font-family: 'EB Garamond', serif;
+  font-size: 16px;
+  color: var(--text);
+  background: #fff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#contact-form input:focus,
+#contact-form textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(139, 0, 0, 0.12);
+}
+
+#contact-form textarea {
+  min-height: 180px;
+  resize: vertical;
+}
+
+#submit-btn {
+  width: fit-content;
+  border: none;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  padding: 16px 38px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+#submit-btn:hover {
+  background: #a50000;
+  transform: translateY(-2px);
+}
+
+#submit-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+}
+
+#form-response {
+  color: var(--dark);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.content p {
+  margin-top: 24px;
+  font-size: 17px;
+  line-height: 1.85;
+  color: #3f372f;
+}
+
+.content a {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
 /* ── FOOTER ─────────────────────────────────── */
 footer {
   background: var(--dark);
@@ -436,11 +617,13 @@ footer {
   .nav-links { display: none; }
   .photo-strip { grid-template-columns: 1fr; height: auto; }
   .strip-cell { height: 200px; }
-  #bienvenue, #equipe, #forces { padding: 60px 20px; }
+  #bienvenue, #equipe, #forces, #risques { padding: 60px 20px; }
   .about-grid { grid-template-columns: 1fr; gap: 28px; }
   .team-grid { grid-template-columns: repeat(2, 1fr); }
   .bottom-photos { grid-template-columns: 1fr; height: auto; }
   .bp-cell { height: 180px; }
+  .content { padding: 60px 20px; }
+  #contact-form { padding: 24px; }
   footer { flex-direction: column; gap: 16px; text-align: center; padding: 36px 20px; }
   .footer-right { text-align: center; }
 }
